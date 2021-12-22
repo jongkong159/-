@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>报修</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">功能列表</div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left">
+                <!-- <li class="layui-nav-item"><a href="">控制台</a></li> -->
+                <li class="layui-nav-item">
+                    <!-- <a href="javascript:;">其它系统</a> -->
+                    <dl class="layui-nav-child">
+                        <dd><a href="">授权管理</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a id="id_username">
+                        <!-- <img src="./images/img.jpg" class="layui-nav-img"> -->
+                        username
+                    </a>
+                    <dl class="layui-nav-child">
+<!--                         <dd><a href="">资料</a></dd>
+                        <dd><a href="">设置</a></dd> -->
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a onclick="logout()">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a>功能</a>
+                        <dl class="layui-nav-child">
+                            <a href="/report">主页</a>
+                            <a href="/record">报修记录</a>
+                            <a href="/add">添加报修</a>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+            <div class="layui-body">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>添加报修</legend>    
+            <form class="layui-form" action>
+            </form>
+        </fieldset>
+            <div class="layui-input-inline">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+            <input type="text" name="name"  autocomplete="off" class="layui-input" id="id_name">
+            </div>
+            <p></p>
+            <label class="layui-form-label">手机号</label>
+            <div class="layui-input-inline">
+            <input type="tel" name="phone"  autocomplete="off" class="layui-input" id="id_phone">
+            </div>
+            <p></p>
+
+
+            </div>
+            <div>
+                <label class="layui-form-label">详细地址</label>
+                <div class="layui-input-block">
+                <input type="text" name="address"  autocomplete="off" class="layui-input" id="id_address">
+                </div>
+            </div>
+            <div class="layui-inline">
+    <label class="layui-form-label">预约时间</label>
+    <div class="layui-input-inline">
+    <input type="date" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" lay-key="1">
+</div>
+</div>
+            </form>
+        <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">报修内容</label>
+        <div class="layui-input-block">
+        <textarea placeholder="请详细描述报修内容，所在位置等相关信息" class="layui-textarea" id = "id_content"></textarea>
+        </div>
+    </div>
+    <div class="layui-input-block">
+    <button class="layui-btn" lay-submit lay-filter="demo1" onclick="add()">提交</button>
+    <button type="reset" class="layui-btn layui-btn-primary" onclick="reset()">重置</button>
+    </div>
+    </div>
+</div>
+<script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/static/js/public.js"></script>
+<script type="text/javascript">
+userinfo();
+</script>
+</body>
+
+</html>
